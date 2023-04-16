@@ -35,7 +35,7 @@ export default function ItemPage2() {
         <Text style={{fontSize: 12, fontWeight: '500', color: '#999999', textTransform: 'uppercase'}}>Pisos e porcelanato</Text>
         <Text style={{fontSize: 24, fontWeight: '500', marginBottom: 24}}>Portobello Mont blanc Natural</Text>
         <Text style={{fontSize: 14, fontWeight: '500', marginBottom: 9}}>Informações</Text>
-        <Text style={{fontSize: 14, fontWeight: '400', color: '#999999'}}>Consequat, rhoncus quam auctor non fermentum velit. Sapien mauris amet enim ac nibh enim amet. Lectus orci, id vel sollicitudin.</Text>
+        <Text style={{fontSize: 14, fontWeight: '400', color: '#999999'}}>Consequat, rhoncus quam auctor non fermentum velitt. Sapien mauris amet enim ac nibh enim amet. Lectus orci, id vel sollicitudin.</Text>
       </View>
       <TouchableOpacity style={styles.btn}>
         <Text style={styles.btnText}>Comprar agora</Text>
