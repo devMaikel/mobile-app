@@ -1,19 +1,41 @@
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Button, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Alert, Button, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
 
 export default function Login() {
+  const [ inputEmail, setInputEmail ] = useState('');
+  const [ inputPassword, setInputPassword ] = useState('');
+  const [ loginBtnIsDisabled, setLoginBtnIsDisabled ] = useState(true);
   const navigation = useNavigation();
+
+  const validateEmail = () => (/\S+@\S+\.\S+/).test(inputEmail); //regex para validacao de formato do email
+  const validateInputs = () => {
+    if (validateEmail() && inputPassword.length > 5) {
+      setLoginBtnIsDisabled(false);
+    } else {
+      setLoginBtnIsDisabled(true);
+    }
+  }
+
+  useEffect(() => {
+    validateInputs()
+  }, [inputEmail, inputPassword]);
 
   const signInBtn = () => {
     navigation.navigate('signupone');
   }
 
   const accessBtn = () => {
-    navigation.navigate('mainpage');
+    if(!validateEmail()) {
+      Alert.alert('Email inválido', 'Insira um email em formato válido');
+    } else if (inputPassword.length < 6) {
+      Alert.alert('Senha inválida','Senha deve conter 6 ou mais caracteres');
+    } else {
+      navigation.navigate('mainpage');
+    }
   }
 
   return (
@@ -33,6 +55,8 @@ export default function Login() {
           textContentType='emailAddress'
           autoComplete='email'
           placeholderTextColor='#B8B5C3'
+          value={inputEmail}
+          onChangeText={text => setInputEmail(text)}
         />
         <TextInput
           placeholder='Senha'
@@ -40,11 +64,16 @@ export default function Login() {
           textContentType='password'
           placeholderTextColor='#B8B5C3'
           secureTextEntry={true}
+          value={inputPassword}
+          onChangeText={text => setInputPassword(text)}
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}>
           <Text style={styles.passRequest}>Esqueci minha senha</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={accessBtn}>
+        <TouchableOpacity 
+          style={ loginBtnIsDisabled ? {...styles.btn, backgroundColor: 'gray'} : styles.btn} 
+          onPress={accessBtn} 
+        >
           <Text style={styles.btnText}>Acessar</Text>
         </TouchableOpacity>
         <Text style={styles.account}>
@@ -55,3 +84,5 @@ export default function Login() {
     </View>
   );
 }
+
+// disabled={loginBtnIsDisabled}

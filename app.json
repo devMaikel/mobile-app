@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "velty-mobile",
-    "slug": "velty-mobile",
+    "slug": "pex-project",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "31d48873-9218-41ee-a720-ab7a67c14dab"
+      }
+    },
+    "owner": "maikelmy"
   }
 }

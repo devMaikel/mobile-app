@@ -1,10 +1,26 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Alert, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
 
 export default function SignUpOne() {
+  const [ inputEmail, setInputEmail ] = useState('');
+  const [ inputPassword, setInputPassword ] = useState('');
+  const [ loginBtnIsDisabled, setLoginBtnIsDisabled ] = useState(true);
+
+  const validateEmail = () => (/\S+@\S+\.\S+/).test(inputEmail); //regex para validacao de formato do email
+  const validateInputs = () => {
+    if (validateEmail() && inputPassword.length > 5) {
+      setLoginBtnIsDisabled(false);
+    } else {
+      setLoginBtnIsDisabled(true);
+    }
+  }
+
+  useEffect(() => {
+    validateInputs()
+  }, [inputEmail, inputPassword]);
   const navigation = useNavigation();
 
   const termsNav = () => {
@@ -16,7 +32,13 @@ export default function SignUpOne() {
   }
 
   const continueBtn = () => {
-    navigation.navigate('signuptwo');
+    if(!validateEmail()) {
+      Alert.alert('Email inválido', 'Insira um email em formato válido');
+    } else if (inputPassword.length < 6) {
+      Alert.alert('Senha inválida','Senha deve conter 6 ou mais caracteres');
+    } else {
+      navigation.navigate('signuptwo');
+    }
   }
 
   return (
@@ -36,6 +58,8 @@ export default function SignUpOne() {
           textContentType='emailAddress'
           autoComplete='email'
           placeholderTextColor='#B8B5C3'
+          value={inputEmail}
+          onChangeText={text => setInputEmail(text)}
         />
         <TextInput
           placeholder='Senha'
@@ -43,11 +67,16 @@ export default function SignUpOne() {
           textContentType='password'
           placeholderTextColor='#B8B5C3'
           secureTextEntry={true}
+          value={inputPassword}
+          onChangeText={text => setInputPassword(text)}
         />
         <Text style={styles.termsText}>
           Li e aceito os<Text style={styles.account2} onPress={ termsNav }> Termos de serviço</Text> e política de privacidade
         </Text>
-        <TouchableOpacity style={styles.btn} onPress={continueBtn}>
+        <TouchableOpacity 
+          style={ loginBtnIsDisabled ? {...styles.btn, backgroundColor: 'gray'} : styles.btn}
+          onPress={continueBtn}
+        >
           <Text style={styles.btnText}>Continuar</Text>
         </TouchableOpacity>
         <Text style={styles.account}>

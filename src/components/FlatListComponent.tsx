@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList, ImageBackground, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native'
+import { View, Text, Image, FlatList, ImageBackground, TouchableOpacity, StyleSheet, useWindowDimensions, Alert } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/AntDesign';
 
@@ -60,7 +60,9 @@ export default function FlatListComponent() {
             >
               {item.text1}
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}
+            >
               <Text style={{
                 fontSize: 20, 
                 fontWeight: '700', 
@@ -75,6 +77,7 @@ export default function FlatListComponent() {
           <View style={{alignSelf: 'center'}}>
             <TouchableOpacity
               style={styles.arrow}
+              onPress={() => Alert.alert('Atenção', 'Arraste para exibir o proximo banner.')}
             >
               <Icon 
                 name='arrowright' 

@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import ArrowRightBtn from '../../components/ArrowRightBtn';
@@ -20,10 +20,10 @@ export default function MainPage() {
           source={require('../../assets/mainImages/logo.png')} style={styles.logo}
           resizeMode='contain'
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}>
           <Icon name='shoppingcart' size={25} color='black' />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}>
           <Icon name='bells' size={25} color='black' />
         </TouchableOpacity>        
       </View>
@@ -123,28 +123,37 @@ export default function MainPage() {
           style={styles.horizontalImages}
           showsHorizontalScrollIndicator={false}
         >
-          <TouchableOpacity style={styles.scrolImage} >
+          <TouchableOpacity style={styles.scrolImage} onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')} >
             <Image 
               source={require('../../assets/mainImages/brandlist/image01.png')}
               resizeMode='stretch'
               style={{}}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.scrolImage} >
+          <TouchableOpacity 
+            style={styles.scrolImage}
+            onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')} 
+          >
             <Image 
               source={require('../../assets/mainImages/brandlist/image02.png')}
               resizeMode='stretch'
               style={{}}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.scrolImage} >
+          <TouchableOpacity 
+            style={styles.scrolImage}
+            onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')} 
+          >
             <Image 
               source={require('../../assets/mainImages/brandlist/image03.png')}
               resizeMode='stretch'
               style={{}}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.scrolImage} >
+          <TouchableOpacity 
+            style={styles.scrolImage}
+            onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')} 
+          >
             <Image 
               source={require('../../assets/mainImages/brandlist/image04.png')}
               resizeMode='stretch'
@@ -196,19 +205,31 @@ export default function MainPage() {
           <ArrowRightBtn/>
         </ImageBackground>
         <View style={styles.footer}>
-          <TouchableOpacity style={{alignItems: 'center'}}>
+          <TouchableOpacity 
+            style={{alignItems: 'center'}}
+            onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}
+          >
             <Icon name='shoppingcart' size={25} color='#7B61FF' />
             <Text style={{color: '#7B61FF'}}>Comprar</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{alignItems: 'center'}}>
+          <TouchableOpacity 
+            style={{alignItems: 'center'}}
+            onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}
+          >
             <MaterialIcon name='category' size={25} color='black' />
             <Text></Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{alignItems: 'center'}}>
+          <TouchableOpacity 
+            style={{alignItems: 'center'}}
+            onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}
+          >
             <MaterialIcon name='bookmark-border' size={25} color='black' />
             <Text></Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{alignItems: 'center'}}>
+          <TouchableOpacity 
+            style={{alignItems: 'center'}}
+            onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}
+          >
             <Icon name='user' size={25} color='black' />
             <Text></Text>
           </TouchableOpacity>

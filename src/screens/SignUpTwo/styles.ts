@@ -8,12 +8,12 @@ export const styles = StyleSheet.create({
     height: '100%'
   },
   iconsView: {
-    marginTop: 70,
+    marginTop: 55,
     marginHorizontal: 36,
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 45
+    marginBottom: 30
   },
   title: {
     fontSize: 14,
@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   photoText: {
-    marginTop: 16,
+    marginTop: 10,
     color: '#F09200',
     fontSize: 14,
     fontWeight: '500'
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingStart: '10%',
     paddingEnd: '10%',
-    marginTop: 40
+    marginTop: 30
   },
   input: {
     height: 40,

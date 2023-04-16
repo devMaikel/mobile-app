@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ScrollView, Image, FlatList, useWindowDimensions } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, Image, FlatList, useWindowDimensions, Alert } from 'react-native'
 import React from 'react'
 import { styles } from './styles'
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -15,7 +15,7 @@ export default function ItemPage1() {
         <TouchableOpacity onPress={() => navigation.navigate('mainpage')}>
           <Icon name='arrowleft' size={20} color='black' />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}>
           <MaterialIcon name='bookmark-border' size={20} color='black' />
         </TouchableOpacity>
       </View>
@@ -37,7 +37,10 @@ export default function ItemPage1() {
         <Text style={{fontSize: 14, fontWeight: '500', marginBottom: 9}}>Informações</Text>
         <Text style={{fontSize: 14, fontWeight: '400', color: '#999999'}}>Consequat, rhoncus quam auctor non fermentum velit. Sapien mauris amet enim ac nibh enim amet. Lectus orci, id vel sollicitudin.</Text>
       </View>
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity 
+        style={styles.btn}
+        onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}
+      >
         <Text style={styles.btnText}>Comprar agora</Text>
       </TouchableOpacity>
     </View>

@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 import { styles } from './styles';
@@ -29,7 +29,7 @@ export default function FaceId() {
         source={require('../../assets/faceIdImage.png')} style={styles.image}
         resizeMode='contain'
       />
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={styles.btn} onPress={() => Alert.alert('Não implementado', 'Funcionalidade ainda não implementada.')}>
         <Text style={styles.btnText}>Habilitar Face ID</Text>
       </TouchableOpacity>
     </View>
