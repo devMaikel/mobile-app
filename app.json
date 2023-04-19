@@ -15,13 +15,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "y"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.maikelmy.pexproject"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +33,12 @@
         "projectId": "31d48873-9218-41ee-a720-ab7a67c14dab"
       }
     },
-    "owner": "maikelmy"
+    "owner": "maikelmy",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/31d48873-9218-41ee-a720-ab7a67c14dab"
+    }
   }
 }
